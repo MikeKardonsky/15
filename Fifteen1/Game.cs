@@ -56,7 +56,7 @@ namespace Fifteen1
             }
             return pyatnashka;
         }
-        public bool ShiftOrImpossible(int value)
+        public virtual bool ShiftOrImpossible(int value)
         {
             int firsttemp = 0;
             int secondtemp = 0;

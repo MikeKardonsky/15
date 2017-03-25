@@ -22,11 +22,11 @@ namespace Fifteen1
     class Game3 : Game2
     {
         public readonly List<History> history;
-        public Game3(params int[] mas) : base(mas)
+        public Game3(int[] mas) : base(mas)
         {
             history = new List<History>();
         }
-        public bool ToSaveAShiftOrImpossible(int value)
+        public override bool ShiftOrImpossible(int value)
         {
             if (base.ShiftOrImpossible(value))
             {
@@ -35,12 +35,12 @@ namespace Fifteen1
             }
             else return false;
         }
-        public void ToDeleteLastShift()
+        public void DeleteLastStep()
         {
             base.ShiftOrImpossible(history.Last().value);
             history.Remove(history.Last());
         }
-        public void ToPrintAHistory()
+        public void GetHistory()
         {
             foreach (var i in history)
             {
