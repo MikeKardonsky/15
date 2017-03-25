@@ -30,12 +30,21 @@ namespace Fifteen1
                 Console.WriteLine("Позиция числа 5:x = {0},y = {1}", game.GetLocation(5).x, game.GetLocation(5).y);
             }
             else throw new ArgumentException("Данное число не удалось найти");
-            int pyatnashka1 = 8;
+            int pyatnashka1 = 2;
             if (game.ShiftOrImpossible(pyatnashka1))
             {
                 Print.PrintInfo(game.Numbers);
             }
             else throw new ArgumentException("Данное число не удалось найти или невозможно поменять местами с нулём");
+            Game2 game2 = Game2.Randomize(game);
+            Print.PrintInfo(game2.Numbers);
+            Game3 game3 = new Game3(0, 1, 2, 3);
+            game3.ShiftOrImpossible(1);
+            Print.PrintInfo(game3.Numbers);
+           if(game3.ToSaveAShiftOrImpossible(1)) Console.WriteLine(true);
+            game3.ToDeleteLastShift();
+            Print.PrintInfo(game3.Numbers);
+            game3.ToPrintAHistory();
             Console.ReadLine();
         }
     }

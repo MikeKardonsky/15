@@ -17,7 +17,7 @@ namespace Fifteen1
             Side = (int)Math.Sqrt(mas.Length);
             ToMakeAField(mas);
         }
-        private int[,] ToMakeAField(int[] mas)
+        private void ToMakeAField(int[] mas)
         {
             int count = 0;
             Numbers = new int[Side, Side];
@@ -39,7 +39,6 @@ namespace Fifteen1
                     }
                 }
             }
-            return Numbers;
         }
         public Pyatnashka GetLocation(int value)
         {
